@@ -9,9 +9,12 @@ class DrawerItems extends StatelessWidget {
   final bool isSelected;
   @override
   Widget build(BuildContext context) {
-    return isSelected
-        ? ActiveDrawerItem(item: item)
-        : InActiveDrawerItem(item: item);
+    return AnimatedCrossFade(
+        firstChild: ActiveDrawerItem(item: item),
+        secondChild: InActiveDrawerItem(item: item),
+        crossFadeState:
+            isSelected ? CrossFadeState.showFirst : CrossFadeState.showSecond,
+        duration: const Duration(milliseconds: 500));
   }
 }
 

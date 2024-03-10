@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:responsive_dash_board/widgets/all_expenes_header.dart';
+import 'package:responsive_dash_board/widgets/custom_background_countainer.dart';
 import 'package:responsive_dash_board/widgets/expensen_item_row.dart';
+import 'package:responsive_dash_board/widgets/range_option.dart';
 
 class AllExpenses extends StatelessWidget {
   const AllExpenses({super.key});
@@ -10,7 +12,7 @@ class AllExpenses extends StatelessWidget {
     return const CustomBackgroundContainer(
       child:  Column(
         children: [
-          AllExpensesHeader(),
+          AllExpensesHeader(title: 'All Expenses', rangeOption: RangeOpition(),),
           SizedBox(
             height: 16,
           ),
@@ -18,27 +20,5 @@ class AllExpenses extends StatelessWidget {
         ],
       ),
     );
-  }
-}
-
-class CustomBackgroundContainer extends StatelessWidget {
-  const CustomBackgroundContainer({
-    super.key,
-    required this.child,
-    this.paddingValue,
-  });
-  final Widget child;
-  final double? paddingValue;
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-        padding:  EdgeInsets.all(paddingValue??20),
-        decoration: ShapeDecoration(
-          color: Colors.white,
-          shape: RoundedRectangleBorder(
-            borderRadius: BorderRadius.circular(12),
-          ),
-        ),
-        child: child);
   }
 }
