@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:responsive_dash_board/widgets/all_expenses.dart';
+import 'package:responsive_dash_board/widgets/all_card_section.dart';
+import 'package:responsive_dash_board/widgets/all_expenses_quickinvoice.dart';
 import 'package:responsive_dash_board/widgets/custom_drawer.dart';
-import 'package:responsive_dash_board/widgets/quick_invoice.dart';
 
 class DesketopLayout extends StatelessWidget {
   const DesketopLayout({super.key});
@@ -12,22 +12,13 @@ class DesketopLayout extends StatelessWidget {
       children: [
         Expanded(child: CustomDrawer()),
         SizedBox(
-          width: 32,
+          width: 24,
         ),
-        Expanded(
-            flex: 2,
-            child: Column(
-              children: [
-                SizedBox(
-                  height: 40,
-                ),
-                AllExpenses(),
-                SizedBox(
-                  height: 32,
-                ),
-                QuickInvoice()
-              ],
-            ))
+        Expanded(flex: 2, child: AllExpensesAndQuiclInvoice()),
+        SizedBox(
+          width: 24,
+        ),
+        Expanded(child: AllCardSection())
       ],
     );
   }

@@ -16,7 +16,7 @@ class QuickInvoice extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          const AllExpensesHeader(
+          const AllHeader(
             title: 'Quick Invoice',
             rangeOption: QuickAddIcon(),
           ),

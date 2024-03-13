@@ -10,9 +10,12 @@ class AllExpenses extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return const CustomBackgroundContainer(
-      child:  Column(
+      child: Column(
         children: [
-          AllExpensesHeader(title: 'All Expenses', rangeOption: RangeOpition(),),
+          AllHeader(
+            title: 'All Expenses',
+            rangeOption: RangeOpition(),
+          ),
           SizedBox(
             height: 16,
           ),

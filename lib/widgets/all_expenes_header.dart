@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:responsive_dash_board/utils/app_styles.dart';
 
-class AllExpensesHeader extends StatelessWidget {
-  const AllExpensesHeader({
+class AllHeader extends StatelessWidget {
+  const AllHeader({
     super.key, required this.title, required this.rangeOption,
   });
   final String title;

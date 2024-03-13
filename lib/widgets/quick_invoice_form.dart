@@ -7,65 +7,67 @@ class QuickInvoiceForm extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Column(
-      children: [
-        Row(
-          children: [
-            Expanded(
-              child: CustomTextField(
-                hintText: 'Type customer name',
-                title: 'Customer name',
+    return const IntrinsicHeight(
+      child: Column(
+        children: [
+          Row(
+            children: [
+              Expanded(
+                child: CustomTextField(
+                  hintText: 'Type customer name',
+                  title: 'Customer name',
+                ),
               ),
-            ),
-            SizedBox(width: 16),
-            Expanded(
-              child: CustomTextField(
-                hintText: 'Type customer email',
-                title: 'Customer email',
+              SizedBox(width: 16),
+              Expanded(
+                child: CustomTextField(
+                  hintText: 'Type customer email',
+                  title: 'Customer email',
+                ),
               ),
-            ),
-          ],
-        ),
-        SizedBox(
-          height: 24,
-        ),
-        Row(
-          children: [
-            Expanded(
-              child: CustomTextField(
-                hintText: 'Type customer name',
-                title: 'Item name',
-              ),
-            ),
-            SizedBox(width: 16),
-            Expanded(
-              child: CustomTextField(
-                hintText: 'USD',
-                title: 'Item mount',
-              ),
-            ),
-          ],
-        ),
+            ],
+          ),
           SizedBox(
-                  height: 24,
+            height: 20,
+          ),
+          Row(
+            children: [
+              Expanded(
+                child: CustomTextField(
+                  hintText: 'Type customer name',
+                  title: 'Item name',
                 ),
-        Row(
-          children: [
-            Expanded(
-              child: CustomButton(
-                textcolor: Color(0xff4EB7F2),
-                bgColor: Colors.white,
               ),
-            ),
-              SizedBox(
-                  width: 16,
+              SizedBox(width: 16),
+              Expanded(
+                child: CustomTextField(
+                  hintText: 'USD',
+                  title: 'Item mount',
                 ),
-            Expanded(
-              child: CustomButton(),
-            ),
-          ],
-        )
-      ],
+              ),
+            ],
+          ),
+            SizedBox(
+                    height: 20,
+                  ),
+          Row(
+            children: [
+              Expanded(
+                child: CustomButton(
+                  textcolor: Color(0xff4EB7F2),
+                  bgColor: Colors.white,
+                ),
+              ),
+                SizedBox(
+                    width: 16,
+                  ),
+              Expanded(
+                child: CustomButton(),
+              ),
+            ],
+          )
+        ],
+      ),
     );
   }
 }
