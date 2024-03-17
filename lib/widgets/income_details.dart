@@ -15,13 +15,17 @@ class IncomeDetails extends StatelessWidget {
   ];
   @override
   Widget build(BuildContext context) {
-    return ListView.builder(
-      shrinkWrap: true,
-      itemCount: incomeData.length,
-      itemBuilder: (BuildContext context, int index) {
-        return IncomeDetailsList(item: incomeData[index]);
-      },
+    return Column(
+      children: incomeData.map((e) => IncomeDetailsList(item: e)).toList(),
     );
+
+    // return ListView.builder(
+    //   shrinkWrap: true,
+    //   itemCount: incomeData.length,
+    //   itemBuilder: (BuildContext context, int index) {
+    //     return IncomeDetailsList(item: incomeData[index]);
+    //   },
+    // );
   }
 }
 
@@ -30,8 +34,7 @@ class IncomeDetailsList extends StatelessWidget {
   final IncomeDetailsModel item;
   @override
   Widget build(BuildContext context) {
-    return Flexible(
-      child: ListTile(
+    return ListTile(
         leading: Container(
           width: 12,
           height: 12,
@@ -48,8 +51,6 @@ class IncomeDetailsList extends StatelessWidget {
         trailing: Text(
           item.value,
           style: AppStyles.styleMedium16(context),
-        ),
-      ),
-    );
+        ));
   }
 }

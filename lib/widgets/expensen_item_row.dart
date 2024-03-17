@@ -34,33 +34,44 @@ class _ExpensesItemRowState extends State<ExpensesItemRow> {
   int selectedIndex = 0;
   @override
   Widget build(BuildContext context) {
-    return Row(
-        children: items.asMap().entries.map((e) {
-      var index = e.key;
-      var item = e.value;
-      return index == 1
-          ? Expanded(
-              child: Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 12),
-              child: GestureDetector(
-                  onTap: () {
-                    updateIndex(index);
-                  },
-                  child: AllExpensesItem(
-                    item: item,
-                    isSelected: selectedIndex == index,
-                  )),
-            ))
-          : Expanded(
-              child: GestureDetector(
-                  onTap: () {
-                    updateIndex(index);
-                  },
-                  child: AllExpensesItem(
-                    item: item,
-                    isSelected: selectedIndex == index,
-                  )));
-    }).toList());
+    return Row(children: [
+      Expanded(
+        child: GestureDetector(
+            onTap: () {
+              updateIndex(0);
+            },
+            child: AllExpensesItem(
+              item: items[0],
+              isSelected: selectedIndex == 0,
+            )),
+      ),
+      const SizedBox(
+        width: 12,
+      ),
+      Expanded(
+        child: GestureDetector(
+            onTap: () {
+              updateIndex(1);
+            },
+            child: AllExpensesItem(
+              item: items[1],
+              isSelected: selectedIndex == 1,
+            )),
+      ),
+      const SizedBox(
+        width: 12,
+      ),
+      Expanded(
+        child: GestureDetector(
+            onTap: () {
+              updateIndex(2);
+            },
+            child: AllExpensesItem(
+              item: items[2],
+              isSelected: selectedIndex == 2,
+            )),
+      )
+    ]);
   }
 
   void updateIndex(int index) {

@@ -11,7 +11,7 @@ class AllCardSection extends StatelessWidget {
     return const Column(
       children: [
         SizedBox(
-          height: 15,
+          height: 20,
         ),
         AllCard(),
         SizedBox(

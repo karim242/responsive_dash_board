@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 import 'package:responsive_dash_board/utils/app_styles.dart';
 import 'package:responsive_dash_board/widgets/dot_indicator.dart';
 import 'package:responsive_dash_board/widgets/my_card.dart';
@@ -41,9 +42,12 @@ class _AllCardItemState extends State<AllCardItem> {
         MyCard(
           pageController: pageController,
         ),
-        const SizedBox(
-          height: 10,
-        ),
+        // FittedBox(
+           //child:
+            const SizedBox(
+            height: 10,
+          ),
+      //  ),
         DotIndicator(
           selectIndex: selectIndex,
         ),

@@ -25,12 +25,16 @@ class TranscationListview extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return ListView.builder(
-      shrinkWrap: true,
-      itemCount: transactions.length,
-      itemBuilder: (BuildContext context, int index) {
-        return TransactionlistTile(item: transactions[index]);
-      },
+    return Column(
+      children: transactions.map((e) => TransactionlistTile(item: e)).toList(),
     );
+
+    // return ListView.builder(
+    //   shrinkWrap: true,
+    //   itemCount: transactions.length,
+    //   itemBuilder: (BuildContext context, int index) {
+    //     return TransactionlistTile(item: transactions[index]);
+    // },
+    // );
   }
 }

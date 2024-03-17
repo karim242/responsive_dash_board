@@ -16,18 +16,19 @@ class IncomeSection extends StatelessWidget {
         child: Column(
       children: [
         AllHeader(
-          title: 'All Expenses',
+          title: 'Income',
           rangeOption: RangeOpition(),
         ),
-        Expanded(
-          child: Row(
-            children: [
-              Expanded(
-                child: IncomeChart(),
-              ),
-              Expanded(child: IncomeDetails())
-            ],
-          ),
+        Row(
+          crossAxisAlignment: CrossAxisAlignment.center,
+          children: [
+            Expanded(
+              child: IncomeChart(),
+            ),
+            Expanded(
+              child: IncomeDetails(),
+            ),
+          ],
         )
       ],
     ));
